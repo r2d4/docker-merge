@@ -1,0 +1,10 @@
+FROM alpine:3.13.1
+
+RUN apk update \
+    && apk add git perl \
+    && cd /tmp/ \
+    && git clone https://github.com/jasonm23/cowsay.git \
+    && cd cowsay && ./install.sh /usr/local \
+    && cd .. \
+    && rm -rf cowsay \
+    && apk del git
