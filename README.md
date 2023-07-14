@@ -65,7 +65,7 @@ docker build -t cowsay -f examples/getting-started/Dockerfile_cowsay .
 Now let's merge! We're going to tag the merged image as `cow-fortune` using the `-t` flag. The rest of the variadic arguments are images to merge, with the first being the image that "wins" in terms of merge conflicts.
 
 ```
-dgit -t cow-fortune fortune:latest cowsay:latest
+dgit merge -t cow-fortune fortune:latest cowsay:latest
 ```
 
 Finally, let's test it out!
